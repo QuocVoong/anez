@@ -1,0 +1,29 @@
+{
+  "name": "@anez/common",
+  "version": "0.0.1",
+  "private": true,
+  "description": "common",
+  "author": "QuocVoong <quoc.voong@morphotech.co.uk>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/anez-common.cjs.js",
+  "module": "dist/anez-common.esm.js",
+  "directories": {
+    "src": "src"
+  },
+  "preconstruct": {
+    "entrypoints": [
+      "index.js",
+      "utils/index.js",
+      "constants/index.js"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "set-cookie-parser": "^2.4.8",
+    "universal-cookie": "^4.0.4"
+  }
+}

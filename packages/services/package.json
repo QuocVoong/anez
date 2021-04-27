@@ -1,0 +1,26 @@
+{
+  "name": "@anez/services",
+  "version": "0.0.1",
+  "private": true,
+  "description": "services",
+  "author": "QuocVoong <quoc.voong@morphotech.co.uk>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/anez-services.cjs.js",
+  "module": "dist/anez-services.esm.js",
+  "directories": {
+    "src": "src"
+  },
+  "dependencies": {
+    "@anez/common": "0.0.1"
+  },
+  "preconstruct": {
+    "entrypoints": [
+      "index.js",
+      "authServices.js"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}

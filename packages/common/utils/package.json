@@ -1,0 +1,4 @@
+{
+  "main": "dist/anez-common-utils.cjs.js",
+  "module": "dist/anez-common-utils.esm.js"
+}

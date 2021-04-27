@@ -1,0 +1,4 @@
+{
+  "main": "dist/anez-services-authServices.cjs.js",
+  "module": "dist/anez-services-authServices.esm.js"
+}

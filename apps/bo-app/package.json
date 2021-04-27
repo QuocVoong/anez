@@ -1,0 +1,29 @@
+{
+  "name": "@anez/bo-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint-staged": "lint-staged",
+    "prepublish": "lerna run prepublish",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
+  },
+  "pre-commit": "lint-staged",
+  "dependencies": {
+    "@anez/common": "0.0.1",
+    "@anez/core-ui": "0.0.1",
+    "@anez/services": "0.0.1"
+  },
+  "peerDependencies": {
+    "next": "10.1.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "next-images": "^1.7.0"
+  }
+}
