@@ -1,4 +1,6 @@
-import { useRef, useLayoutEffect, useState, useEffect } from 'react';
+import {
+  useRef, useLayoutEffect, useState, useEffect
+} from 'react';
 import debounce from 'lodash/debounce';
 
 export function useDimensions() {
@@ -9,7 +11,7 @@ export function useDimensions() {
   const targetRef = useRef();
   const RESET_TIMEOUT = 100;
 
-  const div_dimensions = () => {
+  const divDimensions = () => {
     setHeight(targetRef.current.offsetHeight);
     setWidth(targetRef.current.offsetWidth);
   };
@@ -17,10 +19,10 @@ export function useDimensions() {
   const useEnhancedEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
   useEnhancedEffect(() => {
-    div_dimensions();
+    divDimensions();
   }, []);
 
-  const debouncedDimensions = debounce(div_dimensions, RESET_TIMEOUT);
+  const debouncedDimensions = debounce(divDimensions, RESET_TIMEOUT);
 
   useEffect(() => {
     window.addEventListener('resize', debouncedDimensions);

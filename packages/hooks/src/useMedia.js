@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 function createUseMediaFactory(useEffectHook) {
   return (query) => {
@@ -10,8 +10,7 @@ function createUseMediaFactory(useEffectHook) {
       }
 
       const matchMedia = window.matchMedia(query);
-      const updateMatch = (event) =>
-        setMatch(event.matches);
+      const updateMatch = (event) => setMatch(event.matches);
 
       setMatch(matchMedia.matches);
 

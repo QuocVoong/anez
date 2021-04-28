@@ -7,10 +7,10 @@ const UnsupportedBehavior = {
 
 function isSupported() {
   return (
-    typeof window !== 'undefined' &&
-    'IntersectionObserver' in window &&
-    'IntersectionObserverEntry' in window &&
-    'intersectionRatio' in IntersectionObserverEntry.prototype
+    typeof window !== 'undefined'
+    && 'IntersectionObserver' in window
+    && 'IntersectionObserverEntry' in window
+    && 'intersectionRatio' in IntersectionObserverEntry.prototype
   );
 }
 
@@ -28,11 +28,11 @@ const emptyBoundingClientRect = {
 };
 
 export function useIntersection({
-                                  root,
-                                  rootMargin,
-                                  threshold,
-                                  unsupportedBehavior = UnsupportedBehavior.TreatAsIntersecting
-                                }) {
+  root,
+  rootMargin,
+  threshold,
+  unsupportedBehavior = UnsupportedBehavior.TreatAsIntersecting
+}) {
   const node = useRef(null);
   const lastNode = useRef(null);
   const observer = useRef(null);
@@ -53,8 +53,7 @@ export function useIntersection({
       return;
     }
 
-    const resolvedRoot =
-      typeof root === 'string' ? document.querySelector(root) : root;
+    const resolvedRoot = typeof root === 'string' ? document.querySelector(root) : root;
 
     const intersectionObserver = new IntersectionObserver(
       ([entry]) => setIntersectingEntry(entry),
@@ -78,8 +77,8 @@ export function useIntersection({
 
   useEffect(() => {
     if (
-      lastNode.current === node.current &&
-      lastObserver.current === observer.current
+      lastNode.current === node.current
+      && lastObserver.current === observer.current
     ) {
       return;
     }
@@ -91,8 +90,8 @@ export function useIntersection({
     }
 
     if (
-      !isSupported() &&
-      unsupportedBehavior === UnsupportedBehavior.TreatAsIntersecting
+      !isSupported()
+      && unsupportedBehavior === UnsupportedBehavior.TreatAsIntersecting
     ) {
       const boundingClientRect = node.current.getBoundingClientRect();
 
@@ -116,10 +115,10 @@ export function useIntersection({
 
     return () => {
       if (
-        lastNode.current == null ||
-        lastObserver.current == null ||
-        (lastNode.current === node.current &&
-          lastObserver.current === observer.current)
+        lastNode.current == null
+        || lastObserver.current == null
+        || (lastNode.current === node.current
+          && lastObserver.current === observer.current)
       ) {
         return;
       }

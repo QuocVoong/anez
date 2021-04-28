@@ -1,14 +1,14 @@
 module.exports = {
   presets: [
-    "@babel/preset-react",
+    '@babel/preset-react',
     [
-      "@babel/preset-env",
+      '@babel/preset-env',
       {
         modules: false,
         loose: true,
         exclude: [
-          "@babel/plugin-transform-async-to-generator",
-          "@babel/plugin-transform-regenerator",
+          '@babel/plugin-transform-async-to-generator',
+          '@babel/plugin-transform-regenerator',
         ],
       },
     ],
@@ -17,15 +17,15 @@ module.exports = {
   ],
   overrides: [
     {
-      test: "./test/**/*",
+      test: './test/**/*',
       presets: [
         [
-          "@babel/preset-env",
+          '@babel/preset-env',
           {
             modules: false,
             exclude: [
-              "@babel/plugin-transform-async-to-generator",
-              "@babel/plugin-transform-regenerator",
+              '@babel/plugin-transform-async-to-generator',
+              '@babel/plugin-transform-regenerator',
             ],
           },
         ],
@@ -33,4 +33,4 @@ module.exports = {
       plugins: [],
     },
   ],
-}
+};
