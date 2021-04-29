@@ -1,0 +1,29 @@
+{
+  "name": "@anez/function-enhancers",
+  "version": "0.0.1",
+  "private": true,
+  "description": "function enhancers",
+  "author": "QuocVoong <quoc.voong@morphotech.co.uk>",
+  "homepage": "https://github.com/QuocVoong/anez#readme",
+  "license": "ISC",
+  "main": "dist/anez-function-enhancers.cjs.js",
+  "module": "dist/anez-function-enhancers.esm.js",
+  "preconstruct": {
+    "entrypoints": [
+      "index.js"
+    ]
+  },
+  "directories": {
+    "src": "src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuocVoong/anez.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/QuocVoong/anez/issues"
+  }
+}

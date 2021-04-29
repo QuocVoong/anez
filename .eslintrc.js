@@ -1,5 +1,5 @@
 module.exports = {
-  parser: "babel-eslint",
+  parser: 'babel-eslint',
   env: {
     browser: true,
     commonjs: true,
@@ -8,91 +8,79 @@ module.exports = {
   },
   parserOptions: {
     ecmaVersion: 6,
-    sourceType: "module",
+    sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
   },
-  plugins: ["import", "unicorn", "simple-import-sort"],
-  extends: ["react-app"],
-  rules: {
-    "react/react-in-jsx-scope": "off", // React is always in scope with Blitz
-    "jsx-a11y/anchor-is-valid": "off", //Doesn't play well with Blitz/Next <Link> usage
-    "import/first": "off",
-    "import/no-default-export": "error",
-    "require-await": "error",
-    "no-async-promise-executor": "error",
-    "unicorn/filename-case": [
-      "error",
-      {
-        case: "kebabCase",
-      },
-    ],
-    "simple-import-sort/imports": [
-      "warn",
-      {
-        groups: [
-          [
-            // Side effect imports.
-            "^\\u0000",
-            // Packages.
-            // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
-            "^@?\\w",
-            // Absolute imports and other imports such as Vue-style `@/foo`.
-            // Anything that does not start with a dot.
-            "^[^.]",
-            // Relative imports.
-            // Anything that starts with a dot.
-            "^\\.",
-          ],
-        ],
-      },
-    ],
-  },
-  overrides: [
-    {
-      files: ["**/*.ts", "**/*.tsx"],
-      parser: "@typescript-eslint/parser",
-      parserOptions: {
-        ecmaVersion: 6,
-        sourceType: "module",
-        ecmaFeatures: {
-          jsx: true,
-        },
-        project: `./tsconfig.eslint.json`,
-      },
-      plugins: ["@typescript-eslint"],
-      rules: {
-        "@typescript-eslint/no-floating-promises": "error",
-        // note you must disable the base rule as it can report incorrect errors
-        "no-use-before-define": "off",
-        // "@typescript-eslint/no-use-before-define": ["error"],
-        // note you must disable the base rule as it can report incorrect errors
-        "no-redeclare": "off",
-        "@typescript-eslint/no-redeclare": ["error"],
-      },
-    },
-    {
-      files: ["examples/**", "recipes/**"],
-      rules: {
-        "import/no-default-export": "off",
-        "unicorn/filename-case": "off",
-        "@typescript-eslint/no-floating-promises": "off",
-      },
-    },
-    {
-      files: ["packages/cli/src/commands/**/*"],
-      rules: {
-        "require-await": "off",
-      },
-    },
-    {
-      files: ["test/**", "**/__fixtures__/**"],
-      rules: {
-        "import/no-default-export": "off",
-        "require-await": "off",
-        "unicorn/filename-case": "off",
-      },
-    },
+  plugins: ['import'],
+  extends: [
+    'plugin:react/recommended',
+    'airbnb'
   ],
-}
+  ignorePatterns: ['**/dist/*.js'],
+  rules: {
+    // Disabled
+    complexity: 0,
+    'react/prop-types': 0,
+    'import/prefer-default-export': 0,
+    'import/export': 0,
+    'import/no-named-as-default': 0,
+    'import/no-named-as-default-member': 0,
+    'arrow-body-style': 0,
+    'react/jsx-props-no-spreading': 0,
+    'no-unused-expressions': 0,
+    'no-use-before-define': 0,
+    'react/display-name': 0,
+    'no-plusplus': 0,
+    'no-useless-escape': 0,
+    'react/no-multi-comp': 0,
+    'no-extend-native': 0,
+    'no-process-env': 0,
+    'init-declarations': 0,
+    'no-restricted-modules': 0,
+    'no-sync': 0,
+    'no-undef-init': 0,
+    'no-inline-comments': 0,
+    'no-new-object': 0,
+    'no-ternary': 0,
+    'padded-blocks': 0,
+    'no-inner-declarations': 0,
+    'id-length': 0,
+    'id-match': 0,
+    'no-underscore-dangle': 0,
+    'sort-vars': 0,
+    'max-statements': 0,
+    'max-params': 0,
+    'require-jsdoc': 0,
+    'comma-dangle': 0,
+
+    // Allow
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'no-multiple-empty-lines': [2, { max: 2 }],
+    semi: [2, 'always'],
+    'consistent-return': 1,
+    'import/no-extraneous-dependencies': 1,
+
+    // Warning
+    'no-unused-vars': 1,
+    'react/sort-comp': 1,
+    'react/no-direct-mutation-state': 1,
+    'react/prefer-es6-class': 1,
+    'react/no-array-index-key': 1,
+
+    // Error
+    'react/jsx-curly-spacing': [2, { when: 'never', allowMultiline: true }],
+    'react/jsx-no-duplicate-props': [2, { ignoreCase: true }],
+    'no-param-reassign': ['error', { props: false }],
+    'space-before-function-paren': ['error', 'never'],
+    'template-curly-spacing': ['error', 'never'],
+    'react/jsx-no-undef': 2,
+    'react/jsx-uses-react': 2,
+    'react/jsx-uses-vars': 2,
+    'react/no-danger': 0,
+    'react/no-did-mount-set-state': 2,
+    'react/no-did-update-set-state': 2,
+    'react/no-unknown-property': 2,
+  }
+};
