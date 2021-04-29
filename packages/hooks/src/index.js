@@ -1,6 +1,7 @@
 export * from './useToggle';
 export * from './useDimension';
 export * from './useScroll';
+export * from './useLazyRef';
 export * from './useClickOutSide';
 export * from './useDebounce';
 export * from './useMountedRef';
